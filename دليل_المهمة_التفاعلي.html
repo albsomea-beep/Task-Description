@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دليل مهمة الذكاء الاصطناعي التفاعلي - BTEC Unit 21</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.05);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.2);
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased p-3 md:p-6 custom-scrollbar">
+
+  <!-- Main Container -->
+  <div class="max-w-6xl mx-auto space-y-6">
+
+    <!-- Header Banner -->
+    <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white rounded-2xl p-6 md:p-8 shadow-xl border border-blue-800/40 relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute -left-10 -top-10 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="relative z-10 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-blue-700/50 pb-4">
+          <div class="flex items-center gap-2">
+            <span class="bg-blue-600/80 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Pearson BTEC Level 3</span>
+            <span class="bg-emerald-500/80 text-white text-xs font-bold px-3 py-1 rounded-full">Unit 21 • Aim A</span>
+          </div>
+          <span class="text-xs text-blue-200">دليل تفاعلي متقدم لشرح المهمة للطلاب</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">المرشد التفاعلي الشامل لمهمة الذكاء الاصطناعي</h1>
+        <p class="text-blue-100 text-sm md:text-base max-w-3xl leading-relaxed">
+          دليلك العملي التفاعلي لفهم وتطبيق معايير التقييم خطوة بخطوة من <span class="text-amber-300 font-bold">A.P1</span> إلى <span class="text-emerald-300 font-bold">A.D1</span>. استخدم الأدوات والألعاب التفاعلية بالأسفل لاختبار استيعابك وضمان أعلى درجة (Distinction).
+        </p>
+      </div>
+
+      <!-- Quick Stats / Badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6 pt-4 border-t border-blue-800/60 text-center">
+        <div class="bg-white/10 rounded-xl p-2.5 backdrop-blur-sm">
+          <div class="text-xs text-blue-200">المعايير المطلوبة</div>
+          <div class="text-base font-bold text-white">P1, P2, M1, D1</div>
+        </div>
+        <div class="bg-white/10 rounded-xl p-2.5 backdrop-blur-sm">
+          <div class="text-xs text-blue-200">القطاعات المدروسة</div>
+          <div class="text-base font-bold text-amber-300">3 قطاعات رئيسية</div>
+        </div>
+        <div class="bg-white/10 rounded-xl p-2.5 backdrop-blur-sm">
+          <div class="text-xs text-blue-200">التقنيات المشروحة</div>
+          <div class="text-base font-bold text-emerald-300">9 تقنيات متخصصة</div>
+        </div>
+        <div class="bg-white/10 rounded-xl p-2.5 backdrop-blur-sm">
+          <div class="text-xs text-blue-200">الهدف النهائي</div>
+          <div class="text-base font-bold text-purple-200">امتياز كامل (Distinction)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Tabs -->
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-2 flex flex-wrap gap-1 md:gap-2">
+      <button onclick="switchTab('tab-scenario')" id="btn-scenario" class="tab-btn flex-1 min-w-[120px] py-2.5 px-3 text-xs md:text-sm font-bold rounded-lg transition-all text-center bg-blue-600 text-white shadow-sm">
+        السيناريو وخريطة العلامات
+      </button>
+      <button onclick="switchTab('tab-p1')" id="btn-p1" class="tab-btn flex-1 min-w-[120px] py-2.5 px-3 text-xs md:text-sm font-bold rounded-lg transition-all text-center text-slate-600 hover:bg-slate-100">
+        المعيار A.P1 (المفاهيم والتقنيات)
+      </button>
+      <button onclick="switchTab('tab-p2')" id="btn-p2" class="tab-btn flex-1 min-w-[120px] py-2.5 px-3 text-xs md:text-sm font-bold rounded-lg transition-all text-center text-slate-600 hover:bg-slate-100">
+        المعيار A.P2 (عيب أم خطر؟)
+      </button>
+      <button onclick="switchTab('tab-m1')" id="btn-m1" class="tab-btn flex-1 min-w-[120px] py-2.5 px-3 text-xs md:text-sm font-bold rounded-lg transition-all text-center text-slate-600 hover:bg-slate-100">
+        المعيار A.M1 (التحليل السببي)
+      </button>
+      <button onclick="switchTab('tab-factors')" id="btn-factors" class="tab-btn flex-1 min-w-[120px] py-2.5 px-3 text-xs md:text-sm font-bold rounded-lg transition-all text-center text-slate-600 hover:bg-slate-100">
+        عوامل التبني المؤسسي (Bullet 5)
+      </button>
+      <button onclick="switchTab('tab-d1')" id="btn-d1" class="tab-btn flex-1 min-w-[120px] py-2.5 px-3 text-xs md:text-sm font-bold rounded-lg transition-all text-center text-slate-600 hover:bg-slate-100">
+        المعيار A.D1 (المقارنة والتوصية)
+      </button>
+      <button onclick="switchTab('tab-checklist')" id="btn-checklist" class="tab-btn flex-1 min-w-[120px] py-2.5 px-3 text-xs md:text-sm font-bold rounded-lg transition-all text-center text-slate-600 hover:bg-slate-100">
+        قائمة التدقيق للامتياز ✓
+      </button>
+    </div>
+
+    <!-- TAB 1: SCENARIO & ROADMAP -->
+    <div id="tab-scenario" class="tab-content space-y-6">
+      
+      <!-- Scenario Card -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg">💼</div>
+          <div>
+            <h2 class="text-lg md:text-xl font-bold text-slate-900">السيناريو المهني الرسمي (Vocational Scenario)</h2>
+            <p class="text-xs text-slate-500">من أنت وما هو دورك في هذه المهمة؟</p>
+          </div>
+        </div>
+        <div class="bg-amber-50 border-r-4 border-amber-500 p-4 rounded-lg text-sm text-amber-900 leading-relaxed">
+          <strong>ملاحظة للمصحح والطالب:</strong> في نظام BTEC البريطاني، لا تكتب بصيغة طالب يحل واجباً نظرياً، بل تتقمص دور <strong>مطور ومستشار برمجيات في شركة تكنولوجيا صاعدة</strong>. مالك الشركة طلب منك دراسة جدوى استثمار الشركة في الذكاء الاصطناعي، وعليك تقديم تقرير يحلل 3 قطاعات، وينتهي بتوصية استثمارية واضحة تجيب: أين نضع أموالنا ولماذا؟
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 class="font-bold text-blue-700 text-sm mb-1">دورك المهني</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">مطور استشاري تقني (Consultant Developer) يجمع بين الفهم البرمجي العميق والنظرة الاستثمارية لبيئة الأعمال.</p>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 class="font-bold text-blue-700 text-sm mb-1">الجمهور المستهدف</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">مالك شركة البرمجيات، المدير التقني، ومجلس الإدارة الباحثون عن عائد مالي آمن وتوسع تقني مستدام.</p>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+            <h3 class="font-bold text-blue-700 text-sm mb-1">المخرج النهائي</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">تقرير تقني واستثماري متكامل، يتضمن مقارنات واضحة وينتهي بقرار استثماري قطعي وخارطة طريق تنفيذية.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marks Ladder (P vs M vs D) -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <h2 class="text-lg font-bold text-slate-900">سلم علامات BTEC: كيف تنتقل من Pass إلى Distinction؟</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Pass -->
+          <div class="border-2 border-blue-200 rounded-xl p-4 bg-blue-50/40 relative">
+            <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded">Pass</span>
+            <h3 class="font-bold text-blue-900 text-base mb-1">الوصف والشرح (Explain)</h3>
+            <p class="text-xs text-slate-600 mb-3">المعايير: A.P1 و A.P2</p>
+            <ul class="text-xs text-slate-700 space-y-2 list-disc list-inside">
+              <li>تعريف المفاهيم الأربعة بشكل صحيح.</li>
+              <li>شرح استخدام 3 تقنيات في كل قطاع مع أمثلة.</li>
+              <li>ذكر المزايا والعيوب والمخاطر.</li>
+              <li class="text-blue-800 font-semibold">مستوى: الطالب يصف ويسرد دون تحليل أسباب عميقة.</li>
+            </ul>
+          </div>
+          <!-- Merit -->
+          <div class="border-2 border-indigo-300 rounded-xl p-4 bg-indigo-50/40 relative">
+            <span class="absolute top-3 left-3 bg-indigo-600 text-white text-xs font-bold px-2 py-0.5 rounded">Merit</span>
+            <h3 class="font-bold text-indigo-900 text-base mb-1">التحليل والتقييم السببي (Assess)</h3>
+            <p class="text-xs text-slate-600 mb-3">المعيار: A.M1</p>
+            <ul class="text-xs text-slate-700 space-y-2 list-disc list-inside">
+              <li>الإجابة عن "لماذا وكيف" حدث هذا التأثير التقني؟</li>
+              <li>تحديد من يربح ومن يخسر بالتفصيل.</li>
+              <li>التمييز بين الأثر القريب والأثر طويل الأمد.</li>
+              <li>طرح سيناريوهات فشل وخطط تخفيف واضحة.</li>
+              <li class="text-indigo-800 font-semibold">مستوى: الطالب يحلل العلاقات السببية والتبعات.</li>
+            </ul>
+          </div>
+          <!-- Distinction -->
+          <div class="border-2 border-emerald-400 rounded-xl p-4 bg-emerald-50/50 relative">
+            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-xs font-bold px-2 py-0.5 rounded">Distinction</span>
+            <h3 class="font-bold text-emerald-900 text-base mb-1">المفاضلة والقرار الاستثماري (Evaluate)</h3>
+            <p class="text-xs text-slate-600 mb-3">المعيار: A.D1</p>
+            <ul class="text-xs text-slate-700 space-y-2 list-disc list-inside">
+              <li>مقارنة القطاعات الثلاثة عبر 8 محاور تقييمية.</li>
+              <li>بناء مصفوفة مقارنة واضحة المعايير والأوزان.</li>
+              <li>موازنة التكلفة والمخاطر والعائد المالي بدقة.</li>
+              <li>تقديم توصية استثمارية حاسمة تبرر أين نضع الميزانية.</li>
+              <li class="text-emerald-800 font-semibold">مستوى: استشاري ناضج يتخذ قرارات مدعومة بالأدلة.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: A.P1 EXPLORER -->
+    <div id="tab-p1" class="tab-content hidden space-y-6">
+      
+      <!-- Concept explanation -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <h2 class="text-lg md:text-xl font-bold text-slate-900">المفاهيم التأسيسية الأربعة (الركن الأول من A.P1)</h2>
+        <p class="text-xs md:text-sm text-slate-600">انقر على المفهوم لاستعراض تعريفه الأكاديمي، مشكلته، واستخدامه الواقعي:</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+          <button onclick="showConcept('ml')" id="cbtn-ml" class="concept-btn p-3 rounded-xl border border-blue-500 bg-blue-50 text-right text-sm font-bold text-blue-900">
+            🤖 التعلم الآلي (Machine Learning)
+          </button>
+          <button onclick="showConcept('dl')" id="cbtn-dl" class="concept-btn p-3 rounded-xl border border-slate-200 bg-white text-right text-sm font-bold text-slate-700 hover:bg-slate-50">
+            🧠 التعلم العميق (Deep Learning)
+          </button>
+          <button onclick="showConcept('nlp')" id="cbtn-nlp" class="concept-btn p-3 rounded-xl border border-slate-200 bg-white text-right text-sm font-bold text-slate-700 hover:bg-slate-50">
+            💬 معالجة اللغات الطبيعية (NLP)
+          </button>
+          <button onclick="showConcept('cv')" id="cbtn-cv" class="concept-btn p-3 rounded-xl border border-slate-200 bg-white text-right text-sm font-bold text-slate-700 hover:bg-slate-50">
+            👁️ الرؤية الحاسوبية (Computer Vision)
+          </button>
+        </div>
+
+        <div id="concept-display" class="bg-slate-50 rounded-xl p-5 border border-slate-200 space-y-2 text-sm leading-relaxed">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+
+      <!-- Sector & 9 Techniques Explorer -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 class="text-lg md:text-xl font-bold text-slate-900">مستكشف التقنيات التسع والأسئلة السبعة الإلزامية</h2>
+            <p class="text-xs text-slate-500">اختر القطاع، ثم اضغط على التقنية لعرض إجابات الأسئلة السبعة ونموذج الإجابة:</p>
+          </div>
+          <!-- Sector Selector -->
+          <div class="flex gap-2">
+            <button onclick="selectSector('edu')" id="sbtn-edu" class="sector-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white">التعليم 🎓</button>
+            <button onclick="selectSector('health')" id="sbtn-health" class="sector-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">الصحة 🏥</button>
+            <button onclick="selectSector('biz')" id="sbtn-biz" class="sector-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">التجارة والأعمال 🛒</button>
+          </div>
+        </div>
+
+        <!-- Techniques list for active sector -->
+        <div id="tech-buttons" class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- 7 Questions Detail Card -->
+        <div id="tech-card" class="bg-gradient-to-br from-slate-50 to-blue-50/30 rounded-xl p-5 border border-blue-200 space-y-4">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: A.P2 DEFECT VS RISK -->
+    <div id="tab-p2" class="tab-content hidden space-y-6">
+      
+      <!-- Defect vs Risk Explanation -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-lg">⚠️</div>
+          <div>
+            <h2 class="text-lg md:text-xl font-bold text-slate-900">الفرق الجوهري بين "العيب" و "الخطر" في معيار A.P2</h2>
+            <p class="text-xs text-slate-500">الخطأ الأكثر شيوعاً الذي يُسقط علامات الطلاب هو الخلط بين هذين المفهومين!</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-amber-50/70 border border-amber-200 rounded-xl p-5 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-amber-900 text-base">العيب التشغيلي (Defect / Limitation)</span>
+              <span class="text-xs bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full font-bold">قصور في الكفاءة</span>
+            </div>
+            <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+              <strong>التعريف:</strong> مشكلة فنية أو قيد تقني أو كلفة تشغيلية تحد من كفاءة واستخدام المنظومة دون أن تسبب بحد ذاتها كارثة مباشرة أو ضرراً متعدياً لأشخاص أبرياء.
+            </p>
+            <div class="text-xs text-slate-600 bg-white/70 p-3 rounded-lg border border-amber-200/50">
+              <strong>أمثلة حية:</strong> ارتفاع تكلفة حوسبة السحابة، استهلاك بطاريات الأجهزة، الحاجة لتدريب المعلمين لمدة شهر، عدم قدرة روبوت الدردشة على فهم اللهجة المحلية، بطء الاستجابة عند انخفاض سرعة الإنترنت.
+            </div>
+          </div>
+
+          <div class="bg-rose-50/70 border border-rose-200 rounded-xl p-5 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-rose-900 text-base">الخطر الداهم (Risk / Hazard)</span>
+              <span class="text-xs bg-rose-200 text-rose-900 px-2 py-0.5 rounded-full font-bold">احتمال ضرر جسيم</span>
+            </div>
+            <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+              <strong>التعريف:</strong> احتمال وقوع ضرر مباشر، مأساوي أو غير قابل للإصلاح يمس سلامة الأفراد، أمن بياناتهم، حقوقهم الإنسانية، أو الاستقرار المالي للمؤسسة.
+            </p>
+            <div class="text-xs text-slate-600 bg-white/70 p-3 rounded-lg border border-rose-200/50">
+              <strong>أمثلة حية:</strong> تشخيص إشعاعي خاطئ يؤدي لاستئصال عضو سليم أو وفاة مريض، تسريب 100 ألف ملف طبي على الإنترنت المظلم، خوارزمية توظيف ترفض الإناث، انهيار أسهم بسبب تداول آلي جامح.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Sorting Game -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-base md:text-lg font-bold text-slate-900">لعبة الفرز التفاعلية: هل هذا "عيب" أم "خطر"؟</h3>
+            <p class="text-xs text-slate-500">اختبر فهمك عبر تصنيف الحالات التالية واقرأ تعليق المصحح الفوري:</p>
+          </div>
+          <span id="game-score" class="text-xs bg-blue-100 text-blue-800 font-bold px-3 py-1.5 rounded-full">النتيجة: 0 / 6</span>
+        </div>
+
+        <div id="quiz-container" class="space-y-3">
+          <!-- Quiz items populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: A.M1 CAUSAL ENGINE -->
+    <div id="tab-m1" class="tab-content hidden space-y-6">
+      
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-lg">🔍</div>
+          <div>
+            <h2 class="text-lg md:text-xl font-bold text-slate-900">معيار الجدارة A.M1: خماسية التحليل والتقييم السببي</h2>
+            <p class="text-xs text-slate-500">كيف تجيب بالعمق الذي يطلبه المقيم للحصول على علامة Merit؟</p>
+          </div>
+        </div>
+
+        <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+          لتحقيق Merit، لا يكفي القول: <em>"الذكاء الاصطناعي يحسن التعليم"</em>. بل يجب تطبيق <strong class="text-indigo-900">الخماسية التحليلية</strong> لكل قطاع:
+        </p>
+
+        <!-- 5 Questions Accordion / Tabs -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-2 text-center text-xs font-bold">
+          <div class="bg-indigo-50 border border-indigo-200 p-2.5 rounded-lg text-indigo-900">1. لماذا وكيف؟<div class="text-[11px] font-normal text-indigo-700">الآلية الرياضية والتقنية</div></div>
+          <div class="bg-indigo-50 border border-indigo-200 p-2.5 rounded-lg text-indigo-900">2. على من يقع؟<div class="text-[11px] font-normal text-indigo-700">الرابحون والخاسرون</div></div>
+          <div class="bg-indigo-50 border border-indigo-200 p-2.5 rounded-lg text-indigo-900">3. المدى الزمني<div class="text-[11px] font-normal text-indigo-700">الأثر القريب vs البعيد</div></div>
+          <div class="bg-indigo-50 border border-indigo-200 p-2.5 rounded-lg text-indigo-900">4. سيناريو الفشل<div class="text-[11px] font-normal text-indigo-700">What could go wrong?</div></div>
+          <div class="bg-indigo-50 border border-indigo-200 p-2.5 rounded-lg text-indigo-900">5. خطة التخفيف<div class="text-[11px] font-normal text-indigo-700">الحلول الهندسية والوقائية</div></div>
+        </div>
+
+        <!-- Causal Sector Interactive Breakdown -->
+        <div class="pt-4 border-t border-slate-200 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-bold text-slate-800">اختر القطاع لمشاهدة التحليل السببي الخماسي المكتمل:</span>
+            <div class="flex gap-2">
+              <button onclick="showCausal('edu')" id="cbtn-s-edu" class="px-2.5 py-1 text-xs font-bold rounded bg-indigo-600 text-white">التعليم</button>
+              <button onclick="showCausal('health')" id="cbtn-s-health" class="px-2.5 py-1 text-xs font-bold rounded bg-slate-100 text-slate-700 hover:bg-slate-200">الصحة</button>
+              <button onclick="showCausal('biz')" id="cbtn-s-biz" class="px-2.5 py-1 text-xs font-bold rounded bg-slate-100 text-slate-700 hover:bg-slate-200">التجارة</button>
+            </div>
+          </div>
+          <div id="causal-display" class="space-y-3">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 5: ENTERPRISE FACTORS -->
+    <div id="tab-factors" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-lg">🏢</div>
+          <div>
+            <h2 class="text-lg md:text-xl font-bold text-slate-900">عوامل تبني وتطبيق الذكاء الاصطناعي في المؤسسات (Bullet 5)</h2>
+            <p class="text-xs text-slate-500">المتطلب الخامس الصريح في ورقة المهمة الرسمية لتوجيه مالك الشركة</p>
+          </div>
+        </div>
+
+        <p class="text-xs md:text-sm text-slate-600">
+          قبل أن تبني شركة البرمجيات أي منتج، يجب على فريق التطوير مراعاة <strong>8 عوامل حاسمة</strong>. انقر على كل بطاقة لقراءة الإجراء التنفيذي المطلوب:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 hover:border-purple-300 transition-all">
+            <div class="text-xl">📊</div>
+            <h3 class="font-bold text-sm text-slate-900">1. جودة وحوكمة البيانات</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">القاعدة الذهبية: Garbage in, Garbage out. إذا كانت البيانات مشوهة، فالقرارات ستكون كارثية. يجب ضمان نظافة البيانات وشمولها.</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 hover:border-purple-300 transition-all">
+            <div class="text-xl">⚡</div>
+            <h3 class="font-bold text-sm text-slate-900">2. بنية الحوسبة التحتية</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">النماذج العميقة تحتاج معالجات رسومية خارقة (GPUs/TPUs). يجب الموازنة بين الاستئجار السحابي أو شراء خوادم خاصة.</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 hover:border-purple-300 transition-all">
+            <div class="text-xl">💰</div>
+            <h3 class="font-bold text-sm text-slate-900">3. الكلفة والعائد (ROI)</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">تحديد نقطة التعادل المالي (Break-even). متى ستسترد الشركة مئات الآلاف المصروفة على التطوير والتدريب؟</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 hover:border-purple-300 transition-all">
+            <div class="text-xl">👥</div>
+            <h3 class="font-bold text-sm text-slate-900">4. رأس المال البشري</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">تدريب الموظفين الحاليين على أدوات الذكاء الاصطناعي بدلاً من مقاومة التغيير، وتوظيف مهندسي MLOps أكفاء.</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 hover:border-purple-300 transition-all">
+            <div class="text-xl">🛡️</div>
+            <h3 class="font-bold text-sm text-slate-900">5. الأمن السيبراني</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">حماية النماذج من هجمات تسميم البيانات (Data Poisoning) وهجمات حقن الأوامر التوليدية والتنصت على الاستعلامات.</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 hover:border-purple-300 transition-all">
+            <div class="text-xl">⚖️</div>
+            <h3 class="font-bold text-sm text-slate-900">6. الأطر الأخلاقية والشفافية</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">تجنب خوارزميات "الصندوق الأسود" واستخدام تقنيات الذكاء الاصطناعي القابل للتفسير (XAI) لمنع التحيز والتمييز.</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 hover:border-purple-300 transition-all">
+            <div class="text-xl">📜</div>
+            <h3 class="font-bold text-sm text-slate-900">7. الامتثال القانوني والتشريعي</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">الالتزام التام بقوانين حماية الخصوصية الصارمة (مثل GDPR، HIPAA وقوانين حماية البيانات المحلية) لتجنب غرامات باهظة.</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 hover:border-purple-300 transition-all">
+            <div class="text-xl">🔄</div>
+            <h3 class="font-bold text-sm text-slate-900">8. القابلية للتوسع وإدارة MLOps</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">القدرة على مراقبة انحراف النموذج (Model Drift) في بيئة الإنتاج وإعادة التدريب التلقائي مع تزايد عدد المستخدمين.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6: A.D1 COMPARISON & RECOMMENDATION -->
+    <div id="tab-d1" class="tab-content hidden space-y-6">
+      
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">🏆</div>
+          <div>
+            <h2 class="text-lg md:text-xl font-bold text-slate-900">معيار الامتياز A.D1: المقارنة النقدية والتوصية الاستثمارية</h2>
+            <p class="text-xs text-slate-500">كيف تبني المقارنة المتعددة الأبعاد وتكتب التوصية التي يطلبها صاحب الشركة؟</p>
+          </div>
+        </div>
+
+        <!-- Comparative Interactive Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-right text-xs border border-slate-200 rounded-xl">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="p-3">معيار المقارنة</th>
+                <th class="p-3 bg-blue-900">قطاع التعليم 🎓</th>
+                <th class="p-3 bg-emerald-900">قطاع الرعاية الصحية 🏥</th>
+                <th class="p-3 bg-amber-900">التجارة والأعمال 🛒</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr class="hover:bg-slate-50">
+                <td class="p-2.5 font-bold text-slate-800">1. نضج التقنية واعتماديتها</td>
+                <td class="p-2.5">متوسط، ما زال خاضعاً لتجارب المدارس</td>
+                <td class="p-2.5">عالي بحثياً، لكنه معقد في الاعتماد السريري</td>
+                <td class="p-2.5 font-bold text-emerald-700">ناضج جداً ومستخدم تجارياً منذ عقد</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-2.5 font-bold text-slate-800">2. سهولة التطبيق والتكامل</td>
+                <td class="p-2.5">متوسط، يحتاج الربط مع بوابات المدارس</td>
+                <td class="p-2.5">معقد وصعب جداً (أجهزة طبية وأنظمة مشافي)</td>
+                <td class="p-2.5 font-bold text-emerald-700">سهل وسريع جداً عبر واجهات APIs وويب</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-2.5 font-bold text-slate-800">3. سرعة العائد المالي (ROI)</td>
+                <td class="p-2.5">بطيء (ميزانيات حكومية وموافقات بطيئة)</td>
+                <td class="p-2.5">طويل الأمد جداً (سنوات من التراخيص)</td>
+                <td class="p-2.5 font-bold text-emerald-700">سريع وفوري (أسابيع وأشهر قليلة)</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-2.5 font-bold text-slate-800">4. خطورة وحساسية البيانات</td>
+                <td class="p-2.5">متوسطة (بيانات قاصرين وسجلات درجات)</td>
+                <td class="p-2.5 text-rose-700 font-bold">فائقة الخطورة (سجلات مرضية سرية)</td>
+                <td class="p-2.5">منخفضة إلى متوسطة (سلوك مشتريات)</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-2.5 font-bold text-slate-800">5. عواقب الخطأ والهلوسة</td>
+                <td class="p-2.5">انزعاج الطالب وطلب إعادة تصحيح</td>
+                <td class="p-2.5 text-rose-700 font-bold">كارثية (احتمال وفاة أو عجز مريض)</td>
+                <td class="p-2.5">بسيطة (اقتراح حذاء غير مناسب للزبون)</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-2.5 font-bold text-slate-800">6. القيود التنظيمية والقانونية</td>
+                <td class="p-2.5">قوانين وزارات التربية وحماية الطفل</td>
+                <td class="p-2.5 text-rose-700 font-bold">صارمة جداً ومعقدة (FDA، وزارات الصحة)</td>
+                <td class="p-2.5 font-bold text-emerald-700">مرنة وحرة نسبياً وتخضع لقوانين التجارة</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-2.5 font-bold text-slate-800">7. الأثر الإنساني والمجتمعي</td>
+                <td class="p-2.5">كبير في بناء عقول الأجيال القادمة</td>
+                <td class="p-2.5 font-bold text-blue-700">الأسمى عالمياً (إنقاذ أرواح ملايين البشر)</td>
+                <td class="p-2.5">اقتصادي وتجاري يرفع الإنتاجية</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- The Final Recommendation Box -->
+        <div class="bg-gradient-to-r from-emerald-900 to-teal-900 text-white rounded-xl p-5 md:p-6 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">القرار والتوصية الحاسمة لمالك الشركة</span>
+            <span class="text-xs text-emerald-200">Executive Summary Recommendation</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-amber-300">أين ننصح مالك الشركة بالاستثمار فوراً؟</h3>
+          <p class="text-xs md:text-sm text-emerald-100 leading-relaxed">
+            بصفتنا المطور الاستشاري، نوصي مالك الشركة بتركيز <strong class="text-white">المرحلة الأولى</strong> في <strong class="text-amber-300 underline">قطاع التجارة والأعمال (Smart Commerce & Retail Solutions)</strong> وتطوير منصة لمحركات التوصية وتحليلات المخزون.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2 text-xs">
+            <div class="bg-white/10 p-3 rounded-lg border border-white/10">
+              <strong class="text-emerald-300 block mb-1">لماذا التجارة أولاً؟</strong>
+              سوق واسع، بيانات سهلة الجمع، لا توجد قيود طبية معقدة، ودورة مبيعات سريعة تضمن استرداد رأس المال وبناء أرباح وتدفقات نقدية مستقرة خلال 6-12 شهراً.
+            </div>
+            <div class="bg-white/10 p-3 rounded-lg border border-white/10">
+              <strong class="text-teal-300 block mb-1">خارطة التوسع نحو الصحة مستقبلاً:</strong>
+              تخصيص 20% من أرباح المنصة التجارية لتمويل مختبر أبحاث وتطوير (R&D) للتحضير لحلول الذكاء الاصطناعي الطبي بعد عامين، عندما تتوفر للشركة الملاءة المالية والخبرة المعقدة.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 7: CHECKLIST -->
+    <div id="tab-checklist" class="tab-content hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-lg md:text-xl font-bold text-slate-900">قائمة التحقق التفاعلية لمعيار الامتياز (Distinction Checklist)</h2>
+            <p class="text-xs text-slate-500">ضع علامة صح أمام كل بند في تقريرك قبل التسليم النهائي:</p>
+          </div>
+          <span id="chk-progress" class="text-xs bg-emerald-100 text-emerald-800 font-bold px-3 py-1.5 rounded-full">المكتمل: 0 / 10</span>
+        </div>
+
+        <div class="space-y-2.5 text-xs md:text-sm text-slate-700">
+          <label class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
+            <input type="checkbox" onchange="updateChecklist()" class="chk-box mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
+            <div>
+              <strong>1. تغطية المفاهيم التأسيسية الأربعة بالكامل:</strong>
+              <div class="text-xs text-slate-500">تم شرح التعلم الآلي، التعلم العميق، معالجة اللغات الطبيعية، والرؤية الحاسوبية بدقة.</div>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
+            <input type="checkbox" onchange="updateChecklist()" class="chk-box mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
+            <div>
+              <strong>2. تفصيل 9 تقنيات متطابقة مع المجالات الثلاثة:</strong>
+              <div class="text-xs text-slate-500">3 تقنيات للتعليم، 3 للصحة، و3 للتجارة، مع عدم خلط التقنيات بين المجالات.</div>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
+            <input type="checkbox" onchange="updateChecklist()" class="chk-box mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
+            <div>
+              <strong>3. الإجابة عن الأسئلة السبعة الإلزامية لكل تقنية:</strong>
+              <div class="text-xs text-slate-500">(ما هي؟ كيف تعمل؟ كيف تستخدم؟ ما المشكلة؟ من المستفيد؟ ما البيانات؟ ما النتيجة؟) + مثال حقيقي.</div>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
+            <input type="checkbox" onchange="updateChecklist()" class="chk-box mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
+            <div>
+              <strong>4. الفصل الصارم بين العيوب والمخاطر في معيار A.P2:</strong>
+              <div class="text-xs text-slate-500">عدم اعتبار التكلفة أو التدريب خطراً، وتخصيص المخاطر للأضرار الجسيمة (الموت، التسريب، التحيز).</div>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
+            <input type="checkbox" onchange="updateChecklist()" class="chk-box mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
+            <div>
+              <strong>5. تطبيق الخماسية السببية في معيار A.M1:</strong>
+              <div class="text-xs text-slate-500">تحليل لماذا وكيف، الرابحون والخاسرون، المدى القريب والبعيد، سيناريو الفشل وخطة التخفيف.</div>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
+            <input type="checkbox" onchange="updateChecklist()" class="chk-box mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
+            <div>
+              <strong>6. تحليل عوامل التبني المؤسسي الثمانية (Task 1 - Bullet 5):</strong>
+              <div class="text-xs text-slate-500">جودة البيانات، البنية، ROI، الكوادر البشرية، الأمن، الأخلاقيات، الامتثال، وMLOps.</div>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
+            <input type="checkbox" onchange="updateChecklist()" class="chk-box mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
+            <div>
+              <strong>7. الإجابة عن أسئلة المقارنة الثمانية في معيار A.D1:</strong>
+              <div class="text-xs text-slate-500">مقارنة نقدية واضحة تزن المزايا والمخاطر عبر المجالات الثلاثة دون تحيز مسبق.</div>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
+            <input type="checkbox" onchange="updateChecklist()" class="chk-box mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
+            <div>
+              <strong>8. جدول مقارنة استثماري شامل ومصفوفة مفاضلة:</strong>
+              <div class="text-xs text-slate-500">جدول واضح يعرض مؤشرات النضج والتكلفة والعائد وحساسية البيانات والمسؤولية القانونية.</div>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
+            <input type="checkbox" onchange="updateChecklist()" class="chk-box mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
+            <div>
+              <strong>9. توصية استثمارية قطعية مبررة بالأدلة لمالك الشركة:</strong>
+              <div class="text-xs text-slate-500">تحديد القطاع الفائز بدقة (التجارة) مع شرح المبررات المالية والتقنية وخطة التوسع للصحة.</div>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
+            <input type="checkbox" onchange="updateChecklist()" class="chk-box mt-1 w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
+            <div>
+              <strong>10. الإخراج والتوثيق الأكاديمي والصور المرقمة:</strong>
+              <div class="text-xs text-slate-500">تقرير منسق، عناوين عريضة مميزة، أشكال مرقمة مع وصف واقعي، والتزام بتعليمات الخطوط.</div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Tab switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+        btn.classList.add('text-slate-600', 'hover:bg-slate-100');
+      });
+      
+      const target = document.getElementById(tabId);
+      if (target) target.classList.remove('hidden');
+
+      const btnId = 'btn-' + tabId.replace('tab-', '');
+      const activeBtn = document.getElementById(btnId);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-slate-600', 'hover:bg-slate-100');
+        activeBtn.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+      }
+    }
+
+    // Concept switching
+    const concepts = {
+      ml: {
+        title: "التعلم الآلي (Machine Learning)",
+        def: "منظومة برمجية خوارزمية تمكن الحاسوب من استيعاب قواعد البيانات الضخمة وبناء نماذج إحصائية تكشف العلاقات الخفية والأنماط التكرارية دون الحاجة إلى كتابة كود برمجي ثابت لكل خطوة.",
+        prob: "عجز المبرمجين البشريين وقواعد البيانات التقليدية عن تحليل ملايين المعاملات المتغيرة لحظياً، مثل اكتشاف محاولات سرقة البطاقات البنكية في ثوانٍ.",
+        ex: "خوارزميات شجرة القرارات والانحدار اللوجستي المستخدمة في البنوك لتحديد الجدارة الائتمانية ورفض المعاملات المشبوهة."
+      },
+      dl: {
+        title: "التعلم العميق (Deep Learning)",
+        def: "بنية خوارزمية متقدمة مبنية على شبكات عصبية اصطناعية متعددة الطبقات (Multi-layered Neural Networks) تحاكي كفاءة وتشابك الخلايا العصبية في القشرة المخية للإنسان.",
+        prob: "عجز الحواسيب الكلاسيكية عن استيعاب وفهم البيانات غير المهيكلة المعقدة مثل صور الأشعة السينية أو التسجيلات الصوتية متعددة اللهجات.",
+        ex: "الشبكات الالتفافية (CNN) في المستشفيات التي تقرأ صور الرنين المغناطيسي وتحدد موضع الورم بدقة تفوق 96%."
+      },
+      nlp: {
+        title: "معالجة اللغات الطبيعية (Natural Language Processing)",
+        def: "فرع يجمع بين علوم اللغويات والذكاء الاصطناعي لتمكين الحواسيب من قراءة وتفكيك وفهم واستيعاب وتوليد الكلام والنصوص البشرية بمختلف قواعدها ومشاعرها.",
+        prob: "التواصل البشري الحر غير المهيكل؛ الحواسيب تفهم أرقاماً (0 و 1) ولا تفهم استفسارات العملاء المكتوبة بلغة عفوية أو عامية.",
+        ex: "روبوتات خدمة العملاء التوليدية الذكية التي تجيب عن استفسارات 10,000 عميل في الثانية الواحدة وتلخص العقود القانونية الطويلة."
+      },
+      cv: {
+        title: "الرؤية الحاسوبية (Computer Vision)",
+        def: "تكنولوجيا برمجية تمنح الكاميرات والآلات القدرة الرقمية على التقاط الصور ومقاطع الفيديو، وتحويلها إلى متجهات رياضية لاستخراج المعالم وتصنيف الأجسام وحساب المسافات.",
+        prob: "إجهاد العين البشرية والخطأ البشري عند مراقبة خطوط الإنتاج السريعة في المصانع أو مراقبة الطريق أثناء القيادة ليلاً.",
+        ex: "أنظمة الفحص البصري في مصانع الرقائق الإلكترونية التي تفحص 200 قطعة في الدقيقة وتكتشف الخدوش التي يقل حجمها عن الميكرون."
+      }
+    };
+
+    function showConcept(key) {
+      document.querySelectorAll('.concept-btn').forEach(b => {
+        b.className = "concept-btn p-3 rounded-xl border border-slate-200 bg-white text-right text-sm font-bold text-slate-700 hover:bg-slate-50";
+      });
+      const active = document.getElementById('cbtn-' + key);
+      if (active) {
+        active.className = "concept-btn p-3 rounded-xl border border-blue-500 bg-blue-50 text-right text-sm font-bold text-blue-900";
+      }
+      const c = concepts[key];
+      const disp = document.getElementById('concept-display');
+      disp.innerHTML = `
+        <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+          <strong class="text-base text-blue-900 font-extrabold">${c.title}</strong>
+          <span class="text-xs bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded">مفهوم أساسي</span>
+        </div>
+        <p><strong class="text-slate-800">التعريف الأكاديمي المبسط:</strong> ${c.def}</p>
+        <p><strong class="text-slate-800">المشكلة التي يحلها:</strong> ${c.prob}</p>
+        <p><strong class="text-emerald-700 font-bold">مثال تطبيقي واقعي:</strong> ${c.ex}</p>
+      `;
+    }
+
+    // 9 Techniques Database
+    const techniquesDB = {
+      edu: [
+        {
+          id: 'edu1',
+          name: '1. أنظمة التعلم التكيفي',
+          sub: 'Adaptive Learning Platforms',
+          q1: 'منظومة خوارزمية ذكية تحلل تفاعل الطالب مع التمارين وتعيد ضبط مسار التعليم وصعوبة الأسئلة لحظياً لكل طالب.',
+          q2: 'تعتمد على خوارزميات التعلم الآلي وشبكات بايزية ترصد سرعة الإجابة ونوعية الأخطاء لتقدير مستوى الإتقان.',
+          q3: 'تُدمج داخل المنصات المدرسية بحيث يحصل الطالب الضعيف على شروحات إضافية، بينما يقفز المتفوق لمستويات متقدمة.',
+          q4: 'مشكلة الفصول التقليدية ذات الوتيرة الواحدة (One-size-fits-all) التي تهمل الضعيف وتصيب المتفوق بالملل.',
+          q5: 'الطلاب، المعلمون (الذين يراقبون لوحات المؤشرات)، ومدراء المدارس.',
+          q6: 'بيانات أوقات الاستجابة، خيارات الإجابات الصحيحة والخاطئة، وعدد محاولات حل المسائل.',
+          q7: 'رفع تحصيل الطلاب بنسبة تفوق 25% وخفض معدلات الرسوب في المواد العلمية والرياضيات.',
+          example: 'منصة كيدزيا ونظام Century AI في المدارس البريطانية.'
+        },
+        {
+          id: 'edu2',
+          name: '2. التصحيح الآلي للمقالات',
+          sub: 'Automated Essay Scoring',
+          q1: 'أنظمة معالجة لغات طبيعية تفحص وتصحح النصوص الطويلة والمقالات الأدبية وتقدم تقييماً فورياً.',
+          q2: 'تفكك الجمل نحوياً وإملائياً وتحلل الترابط المنطقي وتنوع المفردات وتطابق النص مع موضوع السؤال.',
+          q3: 'تُستخدم في امتحانات قياس الكفاءة الدولية والواجبات المدرسية الأسبوعية لتقليل عبء التدقيق اليدوي.',
+          q4: 'استغراق المعلمين عشرات الساعات أسبوعياً في قراءة وتصحيح المقالات وتأخر وصول الملاحظات للطلاب لأسابيع.',
+          q5: 'المعلمون لتفريغ وقتهم للشرح، والطلاب للحصول على ملاحظات توجيهية فورية.',
+          q6: 'نصوص المقالات، نماذج الإجابة المعيارية، وقواعد الصرف والنحو.',
+          q7: 'تقليص وقت التصحيح من أيام إلى ثوانٍ معدودة وتوحيد معايير النزاهة في التقييم.',
+          example: 'محرك e-rater المعتمد في اختبارات التوفل وكتابة المقالات في GRE.'
+        },
+        {
+          id: 'edu3',
+          name: '3. روبوت المساعد التعليمي الذكي',
+          sub: 'AI Chatbot Tutors',
+          q1: 'مساعد ذكي توليدي تفاعلي يتيح للطالب طرح أي سؤال دراسي وتلقي إجابة تفاعلية مخصصة في أي وقت.',
+          q2: 'يعتمد على النماذج اللغوية الكبيرة مع تقييد الإجابات بمحتوى المنهاج المدرسي المعتمد (RAG).',
+          q3: 'يتوفر كتطبيق على الهاتف أو موقع ويب مرافق للطالب أثناء حل الواجبات المسائية والمذاكرة.',
+          q4: 'عدم توفر المعلم البشري بعد ساعات الدوام المدرسي وتكلفة الدروس الخصوصية المرتفعة.',
+          q5: 'الطلاب وأولياء الأمور الباحثون عن دعم تعليمي فوري وموثوق.',
+          q6: 'كتب المنهاج المدرسية، بنك أسئلة الوزارة، وسجل استفسارات الطالب.',
+          q7: 'توفير معلم خصوصي افتراضي لكل طالب طوال 24 ساعة دون أي أعباء مالية.',
+          example: 'أداة Khanmigo طورتها أكاديمية خان لمساعدة طلاب المدارس خطوة بخطوة دون إعطائهم الحل المباشر.'
+        }
+      ],
+      health: [
+        {
+          id: 'health1',
+          name: '1. التعلم العميق في تصنيف الأشعة',
+          sub: 'Deep Learning Radiology',
+          q1: 'خوارزميات رؤية حاسوبية وشبكات عصبية تكتشف الأورام والكسور والجلطات في الصور الإشعاعية بدقة فائقة.',
+          q2: 'تقسم صورة الأشعة لملايين البيكسلات وتطابق تدرجات الرمادي مع أنماط مئات آلاف الحالات المرضية السابقة.',
+          q3: 'تثبت في أجهزة الرنين والأشعة لتسليط الضوء بالألوان على المناطق المشبوهة وتنبيه الطبيب فوراً.',
+          q4: 'نقص أطباء الأشعة عالمياً وإرهاق الطبيب بعد فحص عشرات الحالات مما قد يسبب إغفال ورم ميكروسكوبي مبكر.',
+          q5: 'أطباء الأشعة، الجراحون، والمرضى الذين يحصلون على تشخيص مبكر ينقذ حياتهم.',
+          q6: 'صور الرنين المغناطيسي والأشعة المقطعية بصيغة DICOM الطبية مع تقارير الخزعات المؤكدة.',
+          q7: 'كشف الأورام السرطانية في مراحلها الأولى بنسبة دقة تتجاوز 95% وخفض زمن الانتظار للطوارئ.',
+          example: 'منصة Aidoc المعتمدة من هيئة الغذاء والدواء الأمريكية في غرف طوارئ المستشفيات العالمية.'
+        },
+        {
+          id: 'health2',
+          name: '2. أنظمة دعم القرار السريري',
+          sub: 'Clinical Decision Support (CDSS)',
+          q1: 'أنظمة خبيرة وتحليلات تنبؤية تحلل السجل الصحي للمريض للتنبؤ بالمضاعفات وتحديد أنسب خطة علاجية.',
+          q2: 'تربط الفحوصات المخبرية بالأدوية الحالية وتاريخ الحساسية وتقارنها بقواعد المعرفة الطبية المحدثة لحظياً.',
+          q3: 'تظهر كنوافذ تنبيه ذكية لطبيب المستشفى عند كتابة وصفة دوائية أو ملاحظة مؤشرات حيوية متدهورة.',
+          q4: 'التفاعلات الدوائية القاتلة والخطأ في تقدير جرعات الأدوية للمرضى المصابين بأمراض مزمنة متعددة.',
+          q5: 'الأطباء، الصيادلة السريريون، والمرضى المقيمون في العناية المركزة.',
+          q6: 'التاريخ المرضي، نتائج فحوصات الدم، ضغط الدم، والأدوية المصروفة سابقاً.',
+          q7: 'خفض الأخطاء الطبية الدوائية بنسبة 70% والتنبؤ بتسمم الدم (Sepsis) قبل وقوعه بعدة ساعات.',
+          example: 'نظام Epic Cogito المطبق في كبرى المستشفيات والمراكز الطبية المتقدمة.'
+        },
+        {
+          id: 'health3',
+          name: '3. الذكاء الاصطناعي لاكتشاف الأدوية',
+          sub: 'AI Molecular Drug Discovery',
+          q1: 'نماذج توليدية ومحاكاة كيميائية ذكية تصمم مركبات دوائية جديدة وتتنبأ بكيفية التفاف البروتينات الحيوية.',
+          q2: 'تحاكي الروابط الكيميائية على المستوى الذري وتختبر ملايين الجزيئات افتراضياً في دقائق بدلاً من المعامل.',
+          q3: 'تستخدمها شركات الأدوية والمختبرات الحيوية لتصميم أدوية تستهدف طفرات جينية محددة.',
+          q4: 'استغراق تطوير أي دواء جديد من 10 إلى 15 عاماً وتكلفة تفوق 2 مليار دولار دون ضمان النجاح.',
+          q5: 'مختبرات الأبحاث، شركات الدواء، وملايين المرضى المصابين بأمراض نادرة ومستعصية.',
+          q6: 'تسلسلات الحمض النووي (DNA)، التركيبات البلورية للبروتينات، والتفاعلات الكيميائية المعروفة.',
+          q7: 'تقليص مرحلة التصميم الكيميائي الأولي للأدوية من 5 سنوات إلى بضعة أشهر فقط.',
+          example: 'نموذج AlphaFold من DeepMind الذي تنبأ بتركيب جميع البروتينات المعروفة للإنسانية.'
+        }
+      ],
+      biz: [
+        {
+          id: 'biz1',
+          name: '1. محركات التوصية المخصصة',
+          sub: 'Personalized Recommendation Engines',
+          q1: 'أنظمة تعلم آلي ترصد سلوك المتسوقين الرقمي وتقترح لكل عميل منتجات تتطابق تماماً مع ذوقه واحتياجاته.',
+          q2: 'تعتمد على التصفية التعاونية (Collaborative Filtering) بمطابقة سلوكك مع مستخدمين يشبهونك في الاهتمام.',
+          q3: 'تعمل كشريط "قد يعجبك أيضاً" في الصفحة الرئيسية وصفحة الدفع في المتاجر الإلكترونية وتطبيقات البث.',
+          q4: 'تشتت العميل أمام آلاف المنتجات وصعوبة عثوره على ما يريد سريعاً مما يقلل المبيعات.',
+          q5: 'أصحاب المتاجر لزيادة المبيعات، والمتسوقون لتوفير وقت البحث.',
+          q6: 'سجل التصفح، المشتريات السابقة، الوقت المقضي على كل منتج، والتقييمات المكتوبة.',
+          q7: 'رفع متوسط قيمة سلة المشتريات وتحقيق أكثر من 35% من إجمالي مبيعات المتاجر الإلكترونية الكبرى.',
+          example: 'محرك توصية أمازون وخوارزمية التوصية الشخصية في منصة نتفليكس.'
+        },
+        {
+          id: 'biz2',
+          name: '2. التحليلات التنبؤية لسلاسل الإمداد',
+          sub: 'Predictive Inventory Analytics',
+          q1: 'خوارزميات ذكية تتنبأ بحجم الطلب المستقبلي على كل سلعة وتحدد الكميات المثالية للطلب والتخزين.',
+          q2: 'تحلل أنماط المبيعات السابقة وتربطها بالمواسم، تقلبات الطقس، العطلات، والاتجاهات الشائعة على السوشيال ميديا.',
+          q3: 'توجه مدراء المستودعات تلقائياً بإصدار أوامر الشراء قبل نفاد البضاعة وتوزيع المخزون جغرافياً.',
+          q4: 'تكدس البضائع في المخازن وتلفها، أو نفادها المفاجئ وخسارة العملاء لصالح المنافسين.',
+          q5: 'مدراء سلاسل الإمداد، مسؤولو المستودعات، والمدراء الماليون للشركات.',
+          q6: 'بيانات فواتير المبيعات اليومية، فترات شحن الموردين، والبيانات الخارجية كالمواسم والطقس.',
+          q7: 'خفض تكاليف التخزين المهدرة بنسبة 30% ومنع نفاد المنتجات الأساسية بنسبة تفوق 90%.',
+          example: 'نظام إدارة المخزون التنبؤي في سلسلة متاجر وول مارت ومستودعات التوزيع العالمية.'
+        },
+        {
+          id: 'biz3',
+          name: '3. الكشف الفوري عن الاحتيال المالي',
+          sub: 'Real-Time Financial Fraud Detection',
+          q1: 'أنظمة أمنية فائقة السرعة تراقب كل حركة شراء بالبطاقة البنكية وترصد أي سلوك احتيالي وتجمده فوراً.',
+          q2: 'تبني بروفايل سلوكي لكل عميل، وعند حدوث معاملة غير طبيعية (مثل شراء من دولتين مختلفتين في 5 دقائق) تصنفها كخطر.',
+          q3: 'تدمج في بوابات الدفع الإلكتروني للبنوك وشركات بطاقات الائتمان وتتخذ القرار في أقل من 100 ميلي ثانية.',
+          q4: 'سرقة بيانات بطاقات الائتمان وعمليات الاختراق السيبراني التي تكلف الاقتصاد مليارات الدولارات سنوياً.',
+          q5: 'البنوك، التجار الإلكترونيون، وحاملو البطاقات المصرفية لحماية أموالهم من السرقة.',
+          q6: 'موقع المعاملة الجغرافي (IP/GPS)، المبلغ المالي، سرعة الكتابة، وتاريخ المعاملات المعتاد.',
+          q7: 'منع سرقة مئات الملايين وخفض المعاملات المزيفة بنسبة تفوق 80% دون تعطيل الشراء الشرعي.',
+          example: 'نظام Visa Advanced Authorization وشبكات الحماية الذكية في PayPal و Stripe.'
+        }
+      ]
+    };
+
+    let currentSector = 'edu';
+
+    function selectSector(sec) {
+      currentSector = sec;
+      document.querySelectorAll('.sector-btn').forEach(b => {
+        b.className = "sector-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200";
+      });
+      const active = document.getElementById('sbtn-' + sec);
+      if (active) {
+        active.className = "sector-btn px-3 py-1.5 text-xs font-bold rounded-lg bg-blue-600 text-white";
+      }
+      renderTechniqueButtons();
+    }
+
+    function renderTechniqueButtons() {
+      const container = document.getElementById('tech-buttons');
+      const techs = techniquesDB[currentSector];
+      container.innerHTML = techs.map((t, idx) => `
+        <button onclick="showTech('${t.id}')" id="tbtn-${t.id}" class="tech-item-btn p-3 rounded-xl border ${idx === 0 ? 'border-blue-600 bg-blue-50 text-blue-900 font-extrabold' : 'border-slate-200 bg-white text-slate-700 font-bold hover:bg-slate-50'} text-right text-xs">
+          <div>${t.name}</div>
+          <div class="text-[11px] font-normal text-slate-500">${t.sub}</div>
+        </button>
+      `).join('');
+      if (techs.length > 0) {
+        showTech(techs[0].id);
+      }
+    }
+
+    function showTech(techId) {
+      const techs = techniquesDB[currentSector];
+      const t = techs.find(x => x.id === techId);
+      if (!t) return;
+
+      document.querySelectorAll('.tech-item-btn').forEach(b => {
+        b.className = "tech-item-btn p-3 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold hover:bg-slate-50 text-right text-xs";
+      });
+      const btn = document.getElementById('tbtn-' + techId);
+      if (btn) {
+        btn.className = "tech-item-btn p-3 rounded-xl border border-blue-600 bg-blue-50 text-blue-900 font-extrabold text-right text-xs";
+      }
+
+      const card = document.getElementById('tech-card');
+      card.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between border-b border-blue-200/80 pb-3 gap-2">
+          <div>
+            <h3 class="text-base font-extrabold text-blue-950">${t.name}</h3>
+            <span class="text-xs text-blue-700">${t.sub}</span>
+          </div>
+          <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">الأسئلة السبعة الإلزامية</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs leading-relaxed">
+          <div class="p-2.5 bg-white rounded-lg border border-slate-200">
+            <strong class="text-blue-900 block mb-0.5">س1: ما هي التقنية؟</strong>
+            <span class="text-slate-700">${t.q1}</span>
+          </div>
+          <div class="p-2.5 bg-white rounded-lg border border-slate-200">
+            <strong class="text-blue-900 block mb-0.5">س2: كيف تعمل الخوارزمية؟</strong>
+            <span class="text-slate-700">${t.q2}</span>
+          </div>
+          <div class="p-2.5 bg-white rounded-lg border border-slate-200">
+            <strong class="text-blue-900 block mb-0.5">س3: كيف تُستخدم داخل القطاع؟</strong>
+            <span class="text-slate-700">${t.q3}</span>
+          </div>
+          <div class="p-2.5 bg-white rounded-lg border border-slate-200">
+            <strong class="text-blue-900 block mb-0.5">س4: ما المشكلة التي تحلها؟</strong>
+            <span class="text-slate-700">${t.q4}</span>
+          </div>
+          <div class="p-2.5 bg-white rounded-lg border border-slate-200">
+            <strong class="text-blue-900 block mb-0.5">س5: من الفئة المستفيدة؟</strong>
+            <span class="text-slate-700">${t.q5}</span>
+          </div>
+          <div class="p-2.5 bg-white rounded-lg border border-slate-200">
+            <strong class="text-blue-900 block mb-0.5">س6: ما البيانات المطلوبة؟</strong>
+            <span class="text-slate-700">${t.q6}</span>
+          </div>
+        </div>
+
+        <div class="p-3 bg-emerald-50 rounded-lg border border-emerald-200 text-xs">
+          <strong class="text-emerald-950 block mb-0.5">س7: ما النتيجة الملموسة المحققة؟</strong>
+          <span class="text-emerald-800">${t.q7}</span>
+        </div>
+
+        <div class="p-3 bg-blue-900 text-white rounded-lg text-xs flex items-center justify-between">
+          <span><strong>مثال واقعي معتمد:</strong> ${t.example}</span>
+          <span class="text-[11px] bg-white/20 px-2 py-0.5 rounded font-mono">Real-world Evidence</span>
+        </div>
+      `;
+    }
+
+    // Quiz Database for Defect vs Risk
+    const quizItems = [
+      {
+        text: "تعطل خادم المستشفى السحابي وتشخيص غير صحيح لورم سرطاني مبكر أدى لانتشاره في جسد المريض.",
+        type: "risk",
+        reason: "هذا 'خطر داهم' لأن النتيجة مساس مباشر بحياة إنسان وضرر جسدي كارثي لا يمكن تداركه."
+      },
+      {
+        text: "حاجة منصة التعليم الذكية لميزانية اشتراك سنوية باهظة في خوادم أمازون السحابية AWS.",
+        type: "defect",
+        reason: "هذا 'عيب تشغيلي' وكلفة مالية، يقلل من جاذبية المنتج اقتصادياً لكنه لا يهدد الأرواح ولا ينتهك الحقوق."
+      },
+      {
+        text: "اختراق قاعدة بيانات المتجر الإلكتروني وتسريب أرقام البطاقات الائتمانية لـ 50 ألف عميل في السوق السوداء.",
+        type: "risk",
+        reason: "هذا 'خطر أمني داهم' يتعلق بالأمن السيبراني، ويؤدي إلى سرقة أموال ومقاضاة قانونية للشركة."
+      },
+      {
+        text: "عجز روبوت الدردشة التعليمي عن فهم بعض العبارات المكتوبة باللهجة العامية الدارجة للطلاب.",
+        type: "defect",
+        reason: "هذا 'عيب وقصور تقني' في قاموس النموذج اللغوي، يحتاج لإعادة تدريب على المعاجم المحلية ولا يشكل خطراً."
+      },
+      {
+        text: "اعتماد بنك على خوارزمية ذكاء اصطناعي تقوم تلقائياً برفض طلبات القروض لسكان منطقة معينة بسبب تحيز تاريخي.",
+        type: "risk",
+        reason: "هذا 'خطر أخلاقي وحقوقي داهم' يمثل تمييزاً عنصرياً ومناطقياً غير قانوني يعاقب عليه القانون الدولي."
+      },
+      {
+        text: "استغراق تدريب الكادر الطبي في المستشفى على واجهة برنامج الأشعة الجديد مدة 40 ساعة عمل.",
+        type: "defect",
+        reason: "هذا 'عيب تنفيذي' يتعلق بجهد ووقت التبني وتدريب رأس المال البشري."
+      }
+    ];
+
+    let userScore = 0;
+    let answered = {};
+
+    function renderQuiz() {
+      const container = document.getElementById('quiz-container');
+      container.innerHTML = quizItems.map((item, idx) => `
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-2.5 text-xs">
+          <div class="font-bold text-slate-800 text-sm">الحالة رقم ${idx + 1}: ${item.text}</div>
+          <div class="flex gap-2" id="qbtns-${idx}">
+            <button onclick="answerQuiz(${idx}, 'defect')" class="px-3 py-1.5 bg-white border border-amber-300 text-amber-900 rounded-lg font-bold hover:bg-amber-50">عيب تشغيلي (Defect)</button>
+            <button onclick="answerQuiz(${idx}, 'risk')" class="px-3 py-1.5 bg-white border border-rose-300 text-rose-900 rounded-lg font-bold hover:bg-rose-50">خطر داهم (Risk)</button>
+          </div>
+          <div id="qres-${idx}" class="hidden p-2.5 rounded-lg text-xs leading-relaxed"></div>
+        </div>
+      `).join('');
+    }
+
+    function answerQuiz(idx, chosen) {
+      if (answered[idx]) return;
+      answered[idx] = true;
+
+      const item = quizItems[idx];
+      const isCorrect = chosen === item.type;
+      if (isCorrect) userScore++;
+
+      document.getElementById('game-score').innerText = `النتيجة: ${userScore} / ${quizItems.length}`;
+
+      const resBox = document.getElementById('qres-' + idx);
+      resBox.classList.remove('hidden');
+      if (isCorrect) {
+        resBox.className = "p-2.5 rounded-lg text-xs leading-relaxed bg-emerald-100 text-emerald-900 border border-emerald-300";
+        resBox.innerHTML = `<strong>إجابة صحيحة! ✓</strong> ${item.reason}`;
+      } else {
+        resBox.className = "p-2.5 rounded-lg text-xs leading-relaxed bg-rose-100 text-rose-900 border border-rose-300";
+        resBox.innerHTML = `<strong>إجابة خاطئة! ✗</strong> ${item.reason}`;
+      }
+
+      const btnGroup = document.getElementById('qbtns-' + idx);
+      btnGroup.classList.add('opacity-50', 'pointer-events-none');
+    }
+
+    // Causal DB for A.M1
+    const causalDB = {
+      edu: {
+        why: "لأن خوارزميات التوصية وتحليل الأداء قادرة على مراقبة وتفسير زمن استجابة كل تلميذ وأسلوب تعلمه بين مئات الآلاف، مما حطم نموذج الفصل التقليدي الموحد.",
+        who: "الرابحون: الطلاب الطموحون الذين يتعلمون بسرعتهم، وأولياء الأمور الذين يوفرون نفقات الدروس. الخاسرون: الطلاب المحرومون من الإنترنت السريع، والمعلمون التقليديون الذين يرفضون تطوير أدواتهم.",
+        time: "المدى القريب: تصحيح فوري للامتحانات وتوفير وقت المعلم الروتيني. المدى البعيد: إعادة تشكيل المنظومة التربوية بالكامل، وتراجع مهارات الكتابة الورقية والتفكير النقدي المستقل إذا اعتمد الطالب على إجابات الذكاء الجاهزة.",
+        failure: "يقوم نظام التصحيح الآلي بإعطاء طالب مبدع علامة صفر في مقال أدبي لأن صياغته الإبداعية لم تتطابق مع قاموس الإجابة المعياري المخزن.",
+        fix: "إلزامية التدخل البشري (Human-in-the-Loop) وإعطاء كل طالب الحق القانوني في طلب إعادة تصحيح يدوي من معلم بشري دون أي رسوم."
+      },
+      health: {
+        why: "لأن الشبكات العصبية الالتفافية (CNN) تعالج بيكسلات الصور الإشعاعية بحساسية رياضية مجهرية تتجاوز قدرة العين البشرية المجهدة بعد 10 ساعات عمل.",
+        who: "الرابحون: المرضى الذين يكتشف أورامهم مبكراً، والأطباء الذين تقل أعباء تدقيقهم الروتيني. الخاسرون: شركات التأمين والمستشفيات التي قد تتحمل دعاوى قضائية باهظة عند حدوث هلوسة خوارزمية.",
+        time: "المدى القريب: فرز الحالات الطارئة بسرعة في غرف الطوارئ خلال ثوانٍ. المدى البعيد: القضاء على أمراض مستعصية عبر أدوية مصممة خصيصاً للشفرة الجينية للمريض.",
+        failure: "انقطاع الاتصال السحابي أو تعرض نموذج الأشعة لتلوث في البيانات التدريبية (Data Drift) يؤدي لإغفال نزيف دماغي حاد لمريض في الطوارئ.",
+        fix: "مبدأ 'المساعد الطبي وليس البديل': الخوارزمية تقدم توصية استشارية فقط، ويحظر قانونياً اعتماد أي تشخيص دون توقيع وختم طبيب بشري معتمد."
+      },
+      biz: {
+        why: "لأن خوارزميات التصفية التعاونية تعالج مليارات النقرات والمشتريات اللحظية وتكتشف سلوك الشراء الخفي الذي يعجز أي مسوق بشري عن رصده.",
+        who: "الرابحون: كبرى المتاجر الإلكترونية التي تضاعف أرباحها، والمستهلك الذي يعثر على ما يريد فوراً. الخاسرون: المتاجر والمكتبات التقليدية الصغرى التي تفلس لعجزها عن منافسة الخوارزميات.",
+        time: "المدى القريب: رفع مبيعات المتجر بنسبة 20-35% وخفض تكلفة تخزين البضائع الكاسدة. المدى البعيد: هيمنة الاحتكارات الرقمية العملاقة وتغير كامل في بنية التوظيف في قطاع التجزئة وسلاسل الإمداد.",
+        failure: "تلاعب منافسين بخوارزمية التوصية عبر روبوتات تولد نقرات وهمية، مما يجعل المتجر يوصي بمنتجات تالفة أو احتيالية تضر بسمعة الشركة.",
+        fix: "تطبيق فلاتر كشف الأنشطة المشبوهة، وحدود أمان صارمة تعزل الأنماط الشاذة، ومراجعة دورية منتظمة لسجلات MLOps."
+      }
+    };
+
+    function showCausal(sec) {
+      document.querySelectorAll('#tab-m1 button').forEach(b => {
+        if (b.id && b.id.startsWith('cbtn-s-')) {
+          b.className = "px-2.5 py-1 text-xs font-bold rounded bg-slate-100 text-slate-700 hover:bg-slate-200";
+        }
+      });
+      const active = document.getElementById('cbtn-s-' + sec);
+      if (active) active.className = "px-2.5 py-1 text-xs font-bold rounded bg-indigo-600 text-white";
+
+      const data = causalDB[sec];
+      const disp = document.getElementById('causal-display');
+      disp.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs leading-relaxed">
+          <div class="p-3 bg-indigo-50/60 rounded-xl border border-indigo-200">
+            <strong class="text-indigo-950 block mb-1">1. لماذا وكيف أحدث هذا التأثير؟</strong>
+            <span class="text-slate-700">${data.why}</span>
+          </div>
+          <div class="p-3 bg-indigo-50/60 rounded-xl border border-indigo-200">
+            <strong class="text-indigo-950 block mb-1">2. على من يقع التأثير (الرابحون والخاسرون)؟</strong>
+            <span class="text-slate-700">${data.who}</span>
+          </div>
+          <div class="p-3 bg-indigo-50/60 rounded-xl border border-indigo-200 md:col-span-2">
+            <strong class="text-indigo-950 block mb-1">3. الأفق الزمني (الأثر القريب مقابل البعيد):</strong>
+            <span class="text-slate-700">${data.time}</span>
+          </div>
+          <div class="p-3 bg-rose-50 rounded-xl border border-rose-200">
+            <strong class="text-rose-950 block mb-1">4. سيناريو الفشل الواقعي (What could go wrong?):</strong>
+            <span class="text-rose-800">${data.failure}</span>
+          </div>
+          <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200">
+            <strong class="text-emerald-950 block mb-1">5. خطة التخفيف والحل الاحترازي (Mitigation):</strong>
+            <span class="text-emerald-800">${data.fix}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    // Checklist Counter
+    function updateChecklist() {
+      const boxes = document.querySelectorAll('.chk-box');
+      let checked = 0;
+      boxes.forEach(b => { if (b.checked) checked++; });
+      document.getElementById('chk-progress').innerText = `المكتمل: ${checked} / ${boxes.length}`;
+      if (checked === boxes.length) {
+        document.getElementById('chk-progress').className = "text-xs bg-emerald-600 text-white font-bold px-3 py-1.5 rounded-full animate-pulse";
+      } else {
+        document.getElementById('chk-progress').className = "text-xs bg-emerald-100 text-emerald-800 font-bold px-3 py-1.5 rounded-full";
+      }
+    }
+
+    // Init
+    window.onload = function() {
+      showConcept('ml');
+      selectSector('edu');
+      renderQuiz();
+      showCausal('edu');
+    };
+  </script>
+</body>
+</html>
